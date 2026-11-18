@@ -285,12 +285,7 @@ The verified macro-action $a_t^* = (m_t, I_t^{\text{base}}, T_t^{\text{max}})$ a
 1. **Continuous Intensity Micro-Calibration:**
    The LLM inverts the physiological target equation to calculate an exact continuous intensity adjustment within the safe envelope $[I_{\min}(m_t), I_{\max}(m_t)]$:
 
-$$
-I_{\mathrm{target}} = \operatorname{clip}\left(
-RPE^*_t - 1.5 \cdot \mathrm{fatigue}_t - 0.5 \cdot \mathrm{stress}_t,
-\; I_{\min}(m_t), \; I_{\max}(m_t)
-\right)
-$$
+$I_{\mathrm{target}} = \text{clip}\left(RPE^*_t - 1.5 \cdot \text{fatigue}_t - 0.5 \cdot \text{stress}_t,\; I_{\min}(m_t),\; I_{\max}(m_t)\right)$
 
    For example, if a user with target Borg RPE $4.3$ experiences elevated fatigue ($0.18$) and stress ($0.35$), the LLM micro-calibrates base endurance intensity from $4.5 \to 3.86$. This micro-tuning collapses residual Borg CR10 error from $1.20 \to \mathbf{0.04}$, driving composite reward to $\mathbf{+1.455}$.
 
@@ -310,13 +305,7 @@ $$
 
 where:
 
-* **Completion Rate** ($C_t \in [0, 1]$): Evaluates workout execution fidelity. Duration overruns are penalized using:
-
-  $$
-  C_t = \min\left(1.0, \frac{T_{\mathrm{avail}}}{T_{\mathrm{target}}}\right)
-  $$
-
-  Missing equipment incurs an additional penalty of $-0.20$ per unavailable item.
+* **Completion Rate** ($C_t \in [0, 1]$): Evaluates workout execution fidelity. Duration overruns are penalized using $C_t = \min\left(1.0, \frac{T_{\mathrm{avail}}}{T_{\mathrm{target}}}\right)$. Missing equipment incurs an additional penalty of $-0.20$ per unavailable item.
 * **User Satisfaction** ($S_t \in [0, 1]$): Driven by completion, category preference match bonus ($+0.30$), Borg RPE alignment bonus ($+0.30$), and recovery reward ($+0.40$) when rest is prescribed during severe fatigue.
 * **Borg CR10 Exertion Error** ($|RPE_t - RPE^*_t|$): The discrepancy between perceived physical exertion ($RPE_t = I_t + 1.5 \cdot \text{fatigue}_t + 0.5 \cdot \text{stress}_t$) and the user's target Borg RPE.
 * **Fatigue Overload Penalty** ($F_t \in [0, 1]$): Incurs quadratic strain penalties when high intensity ($I_t > 6.5$) is prescribed to an already fatigued ($\ge 0.50$) or stressed ($\ge 0.50$) user.
