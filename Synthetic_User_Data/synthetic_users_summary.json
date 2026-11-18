@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "total_users": 10000,
+    "starting_seed": 50000,
+    "elapsed_seconds": 0.29,
+    "generated_at": "2026-10-09T18:57:58Z",
+    "calibration": {
+      "fitrec_calibrated": true,
+      "pamap2_calibrated": true,
+      "wesad_calibrated": true,
+      "time_weights": [
+        0.15,
+        0.3,
+        0.35,
+        0.15,
+        0.05
+      ],
+      "goal_weights": [
+        0.35,
+        0.25,
+        0.25,
+        0.15
+      ],
+      "stress_spike_prob": 0.2,
+      "mean_aerobic_rpe": 6.7
+    }
+  },
+  "distributions": {
+    "fitness_level": {
+      "beginner": 3340,
+      "advanced": 3349,
+      "intermediate": 3311
+    },
+    "goals": {
+      "strength": 2465,
+      "weight_loss": 1535,
+      "general_fitness": 2514,
+      "endurance": 3486
+    },
+    "available_time_minutes": {
+      "30": 3035,
+      "45": 3387,
+      "75": 538,
+      "20": 1512,
+      "60": 1528
+    },
+    "fatigue_mean": 0.5,
+    "stress_mean": 0.418,
+    "target_rpe_mean": 6.54
+  },
+  "files_generated": [
+    "synthetic_users_10k.jsonl",
+    "synthetic_users_10k.csv",
+    "synthetic_users_sample.json",
+    "synthetic_users_summary.json"
+  ]
+}

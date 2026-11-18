@@ -1,0 +1,414 @@
+{
+  "timestamp": "2026-11-17T23:59:32Z",
+  "dataset_results": {
+    "FitRec": {
+      "dataset": "FitRec",
+      "status": "SUCCESS",
+      "source_path": "C:\\Users\\hhenn\\Documents\\Python\\IDAI_Capstone\\Data\\FitRec\\endomondoHR_proper.json",
+      "records_parsed": 100,
+      "parse_errors": 0,
+      "unique_users_in_sample": 2,
+      "sport_distribution": {
+        "bike": 24,
+        "bike (transport)": 12,
+        "run": 64
+      },
+      "gender_distribution": {
+        "male": 100
+      },
+      "heart_rate_bpm_stats": {
+        "count": 100,
+        "mean": 137.57,
+        "std": 12.71,
+        "min": 99.18,
+        "max": 167.15,
+        "median": 137.8
+      },
+      "duration_min_stats": {
+        "count": 100,
+        "mean": 95.42,
+        "std": 51.98,
+        "min": 22.62,
+        "max": 290.42,
+        "median": 77.6
+      },
+      "speed_kmh_stats": {
+        "count": 15,
+        "mean": 25.99,
+        "std": 3.33,
+        "min": 16.24,
+        "max": 29.81,
+        "median": 26.88
+      },
+      "elapsed_sec": 0.34
+    },
+    "PAMAP2": {
+      "dataset": "PAMAP2",
+      "status": "SUCCESS",
+      "protocol_dir": "C:\\Users\\hhenn\\Documents\\Python\\IDAI_Capstone\\Data\\PAMAP2\\PAMAP2_Dataset\\PAMAP2_Dataset\\Protocol",
+      "subjects_parsed": 9,
+      "total_sampled_rows": 401696,
+      "overall_hr_missingness_rate_pct": 90.8,
+      "per_subject": {
+        "subject101": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 5709,
+          "nan_hr_samples": 44291,
+          "hr_missingness_rate_pct": 88.6,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject102": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 5257,
+          "nan_hr_samples": 44743,
+          "hr_missingness_rate_pct": 89.5,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject103": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 5153,
+          "nan_hr_samples": 44847,
+          "hr_missingness_rate_pct": 89.7,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject104": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 4273,
+          "nan_hr_samples": 45727,
+          "hr_missingness_rate_pct": 91.5,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject105": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 4279,
+          "nan_hr_samples": 45721,
+          "hr_missingness_rate_pct": 91.4,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject106": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 4280,
+          "nan_hr_samples": 45720,
+          "hr_missingness_rate_pct": 91.4,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject107": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 3553,
+          "nan_hr_samples": 46447,
+          "hr_missingness_rate_pct": 92.9,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            7,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject108": {
+          "sampled_rows": 50000,
+          "valid_hr_samples": 4284,
+          "nan_hr_samples": 45716,
+          "hr_missingness_rate_pct": 91.4,
+          "activities_recorded": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            16,
+            17
+          ]
+        },
+        "subject109": {
+          "sampled_rows": 1696,
+          "valid_hr_samples": 145,
+          "nan_hr_samples": 1551,
+          "hr_missingness_rate_pct": 91.5,
+          "activities_recorded": [
+            0,
+            24
+          ]
+        }
+      },
+      "per_activity_heart_rate": {
+        "transient": {
+          "activity_id": 0,
+          "sample_count": 11317,
+          "mean_hr_bpm": 108.6,
+          "std_hr_bpm": 20.3,
+          "min_hr_bpm": 72.0,
+          "max_hr_bpm": 172.0
+        },
+        "lying": {
+          "activity_id": 1,
+          "sample_count": 3562,
+          "mean_hr_bpm": 76.5,
+          "std_hr_bpm": 10.3,
+          "min_hr_bpm": 57.0,
+          "max_hr_bpm": 115.0
+        },
+        "sitting": {
+          "activity_id": 2,
+          "sample_count": 3519,
+          "mean_hr_bpm": 80.4,
+          "std_hr_bpm": 7.9,
+          "min_hr_bpm": 63.0,
+          "max_hr_bpm": 113.0
+        },
+        "standing": {
+          "activity_id": 3,
+          "sample_count": 3558,
+          "mean_hr_bpm": 89.3,
+          "std_hr_bpm": 9.8,
+          "min_hr_bpm": 68.0,
+          "max_hr_bpm": 112.0
+        },
+        "walking": {
+          "activity_id": 4,
+          "sample_count": 3365,
+          "mean_hr_bpm": 111.6,
+          "std_hr_bpm": 9.0,
+          "min_hr_bpm": 86.0,
+          "max_hr_bpm": 127.0
+        },
+        "Nordic walking": {
+          "activity_id": 7,
+          "sample_count": 62,
+          "mean_hr_bpm": 98.0,
+          "std_hr_bpm": 15.0,
+          "min_hr_bpm": 78.0,
+          "max_hr_bpm": 116.0
+        },
+        "ascending stairs": {
+          "activity_id": 12,
+          "sample_count": 2121,
+          "mean_hr_bpm": 130.1,
+          "std_hr_bpm": 20.7,
+          "min_hr_bpm": 71.0,
+          "max_hr_bpm": 171.0
+        },
+        "descending stairs": {
+          "activity_id": 13,
+          "sample_count": 1797,
+          "mean_hr_bpm": 127.6,
+          "std_hr_bpm": 22.9,
+          "min_hr_bpm": 78.0,
+          "max_hr_bpm": 175.0
+        },
+        "vacuum cleaning": {
+          "activity_id": 16,
+          "sample_count": 3251,
+          "mean_hr_bpm": 105.1,
+          "std_hr_bpm": 14.1,
+          "min_hr_bpm": 75.0,
+          "max_hr_bpm": 140.0
+        },
+        "ironing": {
+          "activity_id": 17,
+          "sample_count": 4273,
+          "mean_hr_bpm": 90.6,
+          "std_hr_bpm": 8.6,
+          "min_hr_bpm": 69.0,
+          "max_hr_bpm": 122.0
+        },
+        "rope jumping": {
+          "activity_id": 24,
+          "sample_count": 108,
+          "mean_hr_bpm": 148.4,
+          "std_hr_bpm": 7.1,
+          "min_hr_bpm": 138.0,
+          "max_hr_bpm": 162.0
+        }
+      },
+      "elapsed_sec": 1.26
+    },
+    "WESAD": {
+      "dataset": "WESAD",
+      "status": "SUCCESS",
+      "wesad_root": "C:\\Users\\hhenn\\Documents\\Python\\IDAI_Capstone\\Data\\WESAD\\WESAD",
+      "subjects_parsed": 2,
+      "per_subject": {
+        "S2": {
+          "total_chest_samples_700hz": 4255300,
+          "recorded_minutes_approx": 101.3,
+          "label_counts": {
+            "transient": 2142701,
+            "baseline": 800800,
+            "stress": 430500,
+            "amusement": 253400,
+            "meditation": 537599,
+            "undefined_6": 45500,
+            "undefined_7": 44800
+          },
+          "available_signals": {
+            "chest": [
+              "ACC",
+              "ECG",
+              "EMG",
+              "EDA",
+              "Temp",
+              "Resp"
+            ],
+            "wrist": [
+              "ACC",
+              "BVP",
+              "EDA",
+              "TEMP"
+            ]
+          },
+          "physiological_by_condition": {
+            "baseline": {
+              "chest_eda_mean_uS": 2.0565,
+              "chest_eda_std_uS": 1.0755,
+              "chest_temp_mean_celsius": 28.92,
+              "chest_temp_std_celsius": 1.27
+            },
+            "stress": {
+              "chest_eda_mean_uS": 1.7969,
+              "chest_eda_std_uS": 0.6136,
+              "chest_temp_mean_celsius": 31.22,
+              "chest_temp_std_celsius": 0.12
+            },
+            "amusement": {
+              "chest_eda_mean_uS": 0.7372,
+              "chest_eda_std_uS": 0.0882,
+              "chest_temp_mean_celsius": 32.19,
+              "chest_temp_std_celsius": 0.31
+            },
+            "meditation": {
+              "chest_eda_mean_uS": 0.7098,
+              "chest_eda_std_uS": 0.1584,
+              "chest_temp_mean_celsius": 31.71,
+              "chest_temp_std_celsius": 0.37
+            }
+          }
+        },
+        "S3": {
+          "total_chest_samples_700hz": 4545100,
+          "recorded_minutes_approx": 108.2,
+          "label_counts": {
+            "transient": 2345699,
+            "baseline": 798000,
+            "stress": 448000,
+            "amusement": 262500,
+            "meditation": 546001,
+            "label_5": 51100,
+            "undefined_6": 46900,
+            "undefined_7": 46900
+          },
+          "available_signals": {
+            "chest": [
+              "ACC",
+              "ECG",
+              "EMG",
+              "EDA",
+              "Temp",
+              "Resp"
+            ],
+            "wrist": [
+              "ACC",
+              "BVP",
+              "EDA",
+              "TEMP"
+            ]
+          },
+          "physiological_by_condition": {
+            "baseline": {
+              "chest_eda_mean_uS": 6.9799,
+              "chest_eda_std_uS": 0.6337,
+              "chest_temp_mean_celsius": 31.36,
+              "chest_temp_std_celsius": 0.44
+            },
+            "stress": {
+              "chest_eda_mean_uS": 8.3578,
+              "chest_eda_std_uS": 1.0337,
+              "chest_temp_mean_celsius": 32.51,
+              "chest_temp_std_celsius": 4.24
+            },
+            "amusement": {
+              "chest_eda_mean_uS": 7.9829,
+              "chest_eda_std_uS": 0.1884,
+              "chest_temp_mean_celsius": 33.19,
+              "chest_temp_std_celsius": 0.07
+            },
+            "meditation": {
+              "chest_eda_mean_uS": 7.2292,
+              "chest_eda_std_uS": 0.1518,
+              "chest_temp_mean_celsius": 33.11,
+              "chest_temp_std_celsius": 0.18
+            }
+          }
+        }
+      },
+      "methodological_note": "WESAD provides laboratory affective stress responses (EDA, Temp, ECG), not exercise fatigue or physical recovery. It serves as descriptive context for synthetic stress variation.",
+      "elapsed_sec": 4.99
+    }
+  }
+}

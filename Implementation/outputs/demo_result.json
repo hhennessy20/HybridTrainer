@@ -1,0 +1,790 @@
+{
+  "scenario": {
+    "user_id": "syn_user_42",
+    "seed": 42,
+    "fitness_level": "beginner",
+    "goal": "general_fitness",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.18,
+    "stress": 0.35,
+    "recent_completion_rate": 0.82,
+    "target_rpe": 4.1,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  "batch_summary": [
+    {
+      "user_id": "syn_user_42",
+      "dqn_reward": 1.1805625,
+      "hybrid_reward": 1.4893125,
+      "hybrid_satis": 0.9966249999999999,
+      "hybrid_adh": 1.0,
+      "valid": true
+    },
+    {
+      "user_id": "syn_user_43",
+      "dqn_reward": 1.3705625000000003,
+      "hybrid_reward": 1.3393125000000001,
+      "hybrid_satis": 0.696625,
+      "hybrid_adh": 1.0,
+      "valid": true
+    },
+    {
+      "user_id": "syn_user_44",
+      "dqn_reward": 1.26625,
+      "hybrid_reward": 1.4797375,
+      "hybrid_satis": 0.9981249999999999,
+      "hybrid_adh": 1.0,
+      "valid": true
+    }
+  ],
+  "comparison_table": [
+    {
+      "Policy": "StaticSchedule",
+      "Valid": "NO (2)",
+      "Duration": "50m",
+      "Reward": "-0.869",
+      "Adherence": "0.50",
+      "Satisfaction": "0.20",
+      "RPE_Error": "4.8",
+      "Latency": "<1ms"
+    },
+    {
+      "Policy": "RuleBased",
+      "Valid": "YES",
+      "Duration": "45m",
+      "Reward": "+1.276",
+      "Adherence": "1.00",
+      "Satisfaction": "0.93",
+      "RPE_Error": "0.9",
+      "Latency": "<1ms"
+    },
+    {
+      "Policy": "TabularRL",
+      "Valid": "YES",
+      "Duration": "36m",
+      "Reward": "+0.674",
+      "Adherence": "1.00",
+      "Satisfaction": "0.49",
+      "RPE_Error": "2.8",
+      "Latency": "<1ms"
+    },
+    {
+      "Policy": "DuelingDQN",
+      "Valid": "YES",
+      "Duration": "31m",
+      "Reward": "+1.181",
+      "Adherence": "1.00",
+      "Satisfaction": "0.90",
+      "RPE_Error": "1.3",
+      "Latency": "<1ms"
+    },
+    {
+      "Policy": "LLM_Ollama",
+      "Valid": "YES",
+      "Duration": "45m",
+      "Reward": "+1.276",
+      "Adherence": "1.00",
+      "Satisfaction": "0.93",
+      "RPE_Error": "0.9",
+      "Latency": "2966.4ms"
+    },
+    {
+      "Policy": "TabularRL_LLM",
+      "Valid": "YES",
+      "Duration": "45m",
+      "Reward": "+1.489",
+      "Adherence": "1.00",
+      "Satisfaction": "1.00",
+      "RPE_Error": "0.0",
+      "Latency": "5534.0ms"
+    },
+    {
+      "Policy": "HybridTrainer",
+      "Valid": "YES",
+      "Duration": "45m",
+      "Reward": "+1.489",
+      "Adherence": "1.00",
+      "Satisfaction": "1.00",
+      "RPE_Error": "0.0",
+      "Latency": "5398.8ms"
+    }
+  ],
+  "policy_details": {
+    "StaticSchedule": {
+      "action": {
+        "workout_type": "strength",
+        "target_intensity": 8.0,
+        "estimated_duration_min": 50,
+        "volume": "high",
+        "exercises": [
+          {
+            "name": "Barbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "barbell",
+            "sets": 4,
+            "reps": 8,
+            "duration_min": null
+          },
+          {
+            "name": "Pull-ups",
+            "category": "strength_upper",
+            "equipment": "pullup_bar",
+            "sets": 3,
+            "reps": 8,
+            "duration_min": null
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+      },
+      "feedback": {
+        "completion": 0.5,
+        "satisfaction": 0.2,
+        "actual_rpe": 8.95,
+        "target_rpe": 4.1,
+        "rpe_error": 4.85,
+        "fatigue_penalty": 0.0,
+        "reward": -0.869,
+        "violations_count": 2,
+        "is_valid": false
+      },
+      "validation": {
+        "is_valid": false,
+        "violations": [
+          "Exercise 'Barbell Bench Press' requires 'barbell' not in user available equipment: ['bodyweight', 'dumbbells', 'none'].",
+          "Exercise 'Pull-ups' requires 'pullup_bar' not in user available equipment: ['bodyweight', 'dumbbells', 'none']."
+        ],
+        "normalized_action": {
+          "workout_type": "strength",
+          "target_intensity": 8.0,
+          "estimated_duration_min": 50,
+          "volume": "high",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "barbell",
+              "sets": 4,
+              "reps": 8,
+              "duration_min": null
+            },
+            {
+              "name": "Pull-ups",
+              "category": "strength_upper",
+              "equipment": "pullup_bar",
+              "sets": 3,
+              "reps": 8,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+        },
+        "raw_action": {
+          "workout_type": "strength",
+          "target_intensity": 8.0,
+          "estimated_duration_min": 50,
+          "volume": "high",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "barbell",
+              "sets": 4,
+              "reps": 8
+            },
+            {
+              "name": "Pull-ups",
+              "category": "strength_upper",
+              "equipment": "pullup_bar",
+              "sets": 3,
+              "reps": 8
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10
+            }
+          ],
+          "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+        }
+      },
+      "latency_ms": 0.0068999361246824265
+    },
+    "RuleBased": {
+      "action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Brisk Walking",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 22
+          },
+          {
+            "name": "Outdoor Running",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 22
+          }
+        ],
+        "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9291,
+        "actual_rpe": 5.04,
+        "target_rpe": 4.1,
+        "rpe_error": 0.94,
+        "fatigue_penalty": 0.0,
+        "reward": 1.2756,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 22
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 22
+            }
+          ],
+          "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 22
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 22
+            }
+          ],
+          "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+        }
+      },
+      "latency_ms": 0.019799917936325073
+    },
+    "TabularRL": {
+      "action": {
+        "workout_type": "strength",
+        "target_intensity": 6.0,
+        "estimated_duration_min": 36,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Push-ups",
+            "category": "strength_upper",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 12,
+            "duration_min": null
+          },
+          {
+            "name": "Dumbbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.4866,
+        "actual_rpe": 6.94,
+        "target_rpe": 4.1,
+        "rpe_error": 2.84,
+        "fatigue_penalty": 0.0,
+        "reward": 0.6743,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "strength",
+          "target_intensity": 6.0,
+          "estimated_duration_min": 36,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Push-ups",
+              "category": "strength_upper",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 12,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+        },
+        "raw_action": {
+          "workout_type": "strength",
+          "target_intensity": 6.0,
+          "estimated_duration_min": 36,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Push-ups",
+              "category": "strength_upper",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 12
+            },
+            {
+              "name": "Dumbbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10
+            }
+          ],
+          "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+        }
+      },
+      "latency_ms": 0.023300061002373695
+    },
+    "DuelingDQN": {
+      "action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.5,
+        "estimated_duration_min": 31,
+        "volume": "low",
+        "exercises": [
+          {
+            "name": "Brisk Walking",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 15
+          },
+          {
+            "name": "Outdoor Running",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 15
+          }
+        ],
+        "rationale": "Dueling DQN action #2 (Light Endurance): intensity 4.5, duration 31m, volume low."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.8991,
+        "actual_rpe": 5.44,
+        "target_rpe": 4.1,
+        "rpe_error": 1.34,
+        "fatigue_penalty": 0.0,
+        "reward": 1.1806,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.5,
+          "estimated_duration_min": 31,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 15
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 15
+            }
+          ],
+          "rationale": "Dueling DQN action #2 (Light Endurance): intensity 4.5, duration 31m, volume low."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.5,
+          "estimated_duration_min": 31,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 15
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 15
+            }
+          ],
+          "rationale": "Dueling DQN action #2 (Light Endurance): intensity 4.5, duration 31m, volume low."
+        }
+      },
+      "latency_ms": 0.7382000330835581
+    },
+    "LLM_Ollama": {
+      "action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "low",
+        "exercises": [
+          {
+            "name": "Brisk Walking",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 20,
+            "duration_min": 15
+          },
+          {
+            "name": "Push-ups (Bodyweight)",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": 4,
+            "reps": 8,
+            "duration_min": 15
+          }
+        ],
+        "rationale": "Focus on sustained aerobic effort and core stability to build endurance within the strict time limit."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9291,
+        "actual_rpe": 5.04,
+        "target_rpe": 4.1,
+        "rpe_error": 0.94,
+        "fatigue_penalty": 0.0,
+        "reward": 1.2756,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 20,
+              "duration_min": 15
+            },
+            {
+              "name": "Push-ups (Bodyweight)",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 4,
+              "reps": 8,
+              "duration_min": 15
+            }
+          ],
+          "rationale": "Focus on sustained aerobic effort and core stability to build endurance within the strict time limit."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 20,
+              "duration_min": 15
+            },
+            {
+              "name": "Push-ups (Bodyweight)",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 4,
+              "reps": 8,
+              "duration_min": 15
+            }
+          ],
+          "rationale": "Focus on sustained aerobic effort and core stability to build endurance within the strict time limit."
+        }
+      },
+      "latency_ms": 2966.4239999838173
+    },
+    "TabularRL_LLM": {
+      "action": {
+        "workout_type": "endurance",
+        "target_intensity": 3.2,
+        "estimated_duration_min": 45,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Dumbbell Shoulder Press (dumbbells)",
+            "category": "strength",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          },
+          {
+            "name": "Bodyweight Glute Bridges (bodyweight)",
+            "category": "strength",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 15,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Aligning with general_fitness goal and user's preference for endurance while ensuring intensity matches target Borg RPE 4.1 through calibrated strength exercises."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9966,
+        "actual_rpe": 4.14,
+        "target_rpe": 4.1,
+        "rpe_error": 0.04,
+        "fatigue_penalty": 0.0,
+        "reward": 1.4893,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 3.2,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Dumbbell Shoulder Press (dumbbells)",
+              "category": "strength",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            },
+            {
+              "name": "Bodyweight Glute Bridges (bodyweight)",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 15,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Aligning with general_fitness goal and user's preference for endurance while ensuring intensity matches target Borg RPE 4.1 through calibrated strength exercises."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 3.2,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Dumbbell Shoulder Press (dumbbells)",
+              "category": "strength",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            },
+            {
+              "name": "Bodyweight Glute Bridges (bodyweight)",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 15,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Aligning with general_fitness goal and user's preference for endurance while ensuring intensity matches target Borg RPE 4.1 through calibrated strength exercises."
+        }
+      },
+      "latency_ms": 5534.017999889329
+    },
+    "HybridTrainer": {
+      "action": {
+        "workout_type": "endurance",
+        "target_intensity": 3.2,
+        "estimated_duration_min": 45,
+        "volume": "low",
+        "exercises": [
+          {
+            "name": "Bodyweight Air Squats",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "endurance",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 12,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Utilizing low-volume bodyweight and dumbbell resistance for endurance training to maximize recovery while maintaining strength foundation."
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9966,
+        "actual_rpe": 4.14,
+        "target_rpe": 4.1,
+        "rpe_error": 0.04,
+        "fatigue_penalty": 0.0,
+        "reward": 1.4893,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 3.2,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Bodyweight Air Squats",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "endurance",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 12,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Utilizing low-volume bodyweight and dumbbell resistance for endurance training to maximize recovery while maintaining strength foundation."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 3.2,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Bodyweight Air Squats",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "endurance",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 12,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Utilizing low-volume bodyweight and dumbbell resistance for endurance training to maximize recovery while maintaining strength foundation."
+        }
+      },
+      "latency_ms": 5398.7698999699205
+    }
+  }
+}

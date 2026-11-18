@@ -1,0 +1,120 @@
+{
+  "dataset": "WESAD",
+  "status": "SUCCESS",
+  "wesad_root": "C:\\Users\\hhenn\\Documents\\Python\\IDAI_Capstone\\Data\\WESAD\\WESAD",
+  "subjects_parsed": 2,
+  "per_subject": {
+    "S2": {
+      "total_chest_samples_700hz": 4255300,
+      "recorded_minutes_approx": 101.3,
+      "label_counts": {
+        "transient": 2142701,
+        "baseline": 800800,
+        "stress": 430500,
+        "amusement": 253400,
+        "meditation": 537599,
+        "undefined_6": 45500,
+        "undefined_7": 44800
+      },
+      "available_signals": {
+        "chest": [
+          "ACC",
+          "ECG",
+          "EMG",
+          "EDA",
+          "Temp",
+          "Resp"
+        ],
+        "wrist": [
+          "ACC",
+          "BVP",
+          "EDA",
+          "TEMP"
+        ]
+      },
+      "physiological_by_condition": {
+        "baseline": {
+          "chest_eda_mean_uS": 2.0565,
+          "chest_eda_std_uS": 1.0755,
+          "chest_temp_mean_celsius": 28.92,
+          "chest_temp_std_celsius": 1.27
+        },
+        "stress": {
+          "chest_eda_mean_uS": 1.7969,
+          "chest_eda_std_uS": 0.6136,
+          "chest_temp_mean_celsius": 31.22,
+          "chest_temp_std_celsius": 0.12
+        },
+        "amusement": {
+          "chest_eda_mean_uS": 0.7372,
+          "chest_eda_std_uS": 0.0882,
+          "chest_temp_mean_celsius": 32.19,
+          "chest_temp_std_celsius": 0.31
+        },
+        "meditation": {
+          "chest_eda_mean_uS": 0.7098,
+          "chest_eda_std_uS": 0.1584,
+          "chest_temp_mean_celsius": 31.71,
+          "chest_temp_std_celsius": 0.37
+        }
+      }
+    },
+    "S3": {
+      "total_chest_samples_700hz": 4545100,
+      "recorded_minutes_approx": 108.2,
+      "label_counts": {
+        "transient": 2345699,
+        "baseline": 798000,
+        "stress": 448000,
+        "amusement": 262500,
+        "meditation": 546001,
+        "label_5": 51100,
+        "undefined_6": 46900,
+        "undefined_7": 46900
+      },
+      "available_signals": {
+        "chest": [
+          "ACC",
+          "ECG",
+          "EMG",
+          "EDA",
+          "Temp",
+          "Resp"
+        ],
+        "wrist": [
+          "ACC",
+          "BVP",
+          "EDA",
+          "TEMP"
+        ]
+      },
+      "physiological_by_condition": {
+        "baseline": {
+          "chest_eda_mean_uS": 6.9799,
+          "chest_eda_std_uS": 0.6337,
+          "chest_temp_mean_celsius": 31.36,
+          "chest_temp_std_celsius": 0.44
+        },
+        "stress": {
+          "chest_eda_mean_uS": 8.3578,
+          "chest_eda_std_uS": 1.0337,
+          "chest_temp_mean_celsius": 32.51,
+          "chest_temp_std_celsius": 4.24
+        },
+        "amusement": {
+          "chest_eda_mean_uS": 7.9829,
+          "chest_eda_std_uS": 0.1884,
+          "chest_temp_mean_celsius": 33.19,
+          "chest_temp_std_celsius": 0.07
+        },
+        "meditation": {
+          "chest_eda_mean_uS": 7.2292,
+          "chest_eda_std_uS": 0.1518,
+          "chest_temp_mean_celsius": 33.11,
+          "chest_temp_std_celsius": 0.18
+        }
+      }
+    }
+  },
+  "methodological_note": "WESAD provides laboratory affective stress responses (EDA, Temp, ECG), not exercise fatigue or physical recovery. It serves as descriptive context for synthetic stress variation."
+}

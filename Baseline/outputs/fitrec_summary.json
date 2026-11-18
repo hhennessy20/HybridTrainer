@@ -1,0 +1,40 @@
+{
+  "dataset": "FitRec",
+  "status": "SUCCESS",
+  "source_path": "C:\\Users\\hhenn\\Documents\\Python\\IDAI_Capstone\\Data\\FitRec\\endomondoHR_proper.json",
+  "records_parsed": 100,
+  "parse_errors": 0,
+  "unique_users_in_sample": 2,
+  "sport_distribution": {
+    "bike": 24,
+    "bike (transport)": 12,
+    "run": 64
+  },
+  "gender_distribution": {
+    "male": 100
+  },
+  "heart_rate_bpm_stats": {
+    "count": 100,
+    "mean": 137.57,
+    "std": 12.71,
+    "min": 99.18,
+    "max": 167.15,
+    "median": 137.8
+  },
+  "duration_min_stats": {
+    "count": 100,
+    "mean": 95.42,
+    "std": 51.98,
+    "min": 22.62,
+    "max": 290.42,
+    "median": 77.6
+  },
+  "speed_kmh_stats": {
+    "count": 15,
+    "mean": 25.99,
+    "std": 3.33,
+    "min": 16.24,
+    "max": 29.81,
+    "median": 26.88
+  }
+}

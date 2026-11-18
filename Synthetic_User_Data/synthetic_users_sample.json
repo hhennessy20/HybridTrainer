@@ -1,0 +1,596 @@
+[
+  {
+    "user_id": "syn_user_50000",
+    "seed": 50000,
+    "fitness_level": "beginner",
+    "goal": "strength",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.35,
+    "stress": 0.29,
+    "recent_completion_rate": 0.78,
+    "target_rpe": 5.7,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50001",
+    "seed": 50001,
+    "fitness_level": "advanced",
+    "goal": "strength",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.61,
+    "stress": 0.43,
+    "recent_completion_rate": 0.9,
+    "target_rpe": 6.9,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50002",
+    "seed": 50002,
+    "fitness_level": "beginner",
+    "goal": "weight_loss",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [
+      "endurance"
+    ],
+    "fatigue": 0.51,
+    "stress": 0.49,
+    "recent_completion_rate": 0.94,
+    "target_rpe": 5.0,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50003",
+    "seed": 50003,
+    "fitness_level": "advanced",
+    "goal": "general_fitness",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.77,
+    "stress": 0.29,
+    "recent_completion_rate": 0.94,
+    "target_rpe": 8.4,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50004",
+    "seed": 50004,
+    "fitness_level": "advanced",
+    "goal": "general_fitness",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.66,
+    "stress": 0.4,
+    "recent_completion_rate": 0.72,
+    "target_rpe": 7.3,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50005",
+    "seed": 50005,
+    "fitness_level": "advanced",
+    "goal": "general_fitness",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.16,
+    "stress": 0.44,
+    "recent_completion_rate": 0.73,
+    "target_rpe": 7.0,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50006",
+    "seed": 50006,
+    "fitness_level": "intermediate",
+    "goal": "general_fitness",
+    "available_time_min": 75,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.8,
+    "stress": 0.28,
+    "recent_completion_rate": 0.83,
+    "target_rpe": 6.8,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50007",
+    "seed": 50007,
+    "fitness_level": "beginner",
+    "goal": "strength",
+    "available_time_min": 20,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "barbell",
+      "pullup_bar"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [
+      "strength"
+    ],
+    "fatigue": 0.47,
+    "stress": 0.24,
+    "recent_completion_rate": 0.82,
+    "target_rpe": 5.0,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50008",
+    "seed": 50008,
+    "fitness_level": "beginner",
+    "goal": "general_fitness",
+    "available_time_min": 60,
+    "available_equipment": [
+      "bodyweight"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.75,
+    "stress": 0.16,
+    "recent_completion_rate": 0.64,
+    "target_rpe": 4.8,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50009",
+    "seed": 50009,
+    "fitness_level": "beginner",
+    "goal": "strength",
+    "available_time_min": 60,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.4,
+    "stress": 0.23,
+    "recent_completion_rate": 0.85,
+    "target_rpe": 5.9,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50010",
+    "seed": 50010,
+    "fitness_level": "advanced",
+    "goal": "endurance",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "barbell",
+      "pullup_bar"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.29,
+    "stress": 0.11,
+    "recent_completion_rate": 0.91,
+    "target_rpe": 8.3,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50011",
+    "seed": 50011,
+    "fitness_level": "intermediate",
+    "goal": "general_fitness",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [
+      "endurance"
+    ],
+    "fatigue": 0.62,
+    "stress": 0.35,
+    "recent_completion_rate": 0.9,
+    "target_rpe": 5.9,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50012",
+    "seed": 50012,
+    "fitness_level": "beginner",
+    "goal": "strength",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.61,
+    "stress": 0.18,
+    "recent_completion_rate": 0.75,
+    "target_rpe": 5.7,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50013",
+    "seed": 50013,
+    "fitness_level": "beginner",
+    "goal": "strength",
+    "available_time_min": 60,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "barbell",
+      "pullup_bar"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.76,
+    "stress": 0.16,
+    "recent_completion_rate": 0.63,
+    "target_rpe": 6.0,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50014",
+    "seed": 50014,
+    "fitness_level": "advanced",
+    "goal": "general_fitness",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight",
+      "cardio_machine",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.14,
+    "stress": 0.16,
+    "recent_completion_rate": 0.84,
+    "target_rpe": 7.8,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50015",
+    "seed": 50015,
+    "fitness_level": "advanced",
+    "goal": "endurance",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight",
+      "cardio_machine",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.39,
+    "stress": 0.25,
+    "recent_completion_rate": 0.57,
+    "target_rpe": 7.8,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50016",
+    "seed": 50016,
+    "fitness_level": "beginner",
+    "goal": "endurance",
+    "available_time_min": 20,
+    "available_equipment": [
+      "bodyweight",
+      "cardio_machine",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [
+      "endurance"
+    ],
+    "fatigue": 0.24,
+    "stress": 0.34,
+    "recent_completion_rate": 0.72,
+    "target_rpe": 6.2,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50017",
+    "seed": 50017,
+    "fitness_level": "intermediate",
+    "goal": "weight_loss",
+    "available_time_min": 20,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "barbell",
+      "pullup_bar"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.54,
+    "stress": 0.27,
+    "recent_completion_rate": 1.0,
+    "target_rpe": 6.2,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50018",
+    "seed": 50018,
+    "fitness_level": "intermediate",
+    "goal": "general_fitness",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.19,
+    "stress": 0.25,
+    "recent_completion_rate": 0.64,
+    "target_rpe": 6.1,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50019",
+    "seed": 50019,
+    "fitness_level": "intermediate",
+    "goal": "endurance",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells",
+      "barbell",
+      "pullup_bar"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.65,
+    "stress": 0.21,
+    "recent_completion_rate": 0.88,
+    "target_rpe": 7.5,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50020",
+    "seed": 50020,
+    "fitness_level": "beginner",
+    "goal": "general_fitness",
+    "available_time_min": 60,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.11,
+    "stress": 0.51,
+    "recent_completion_rate": 0.77,
+    "target_rpe": 4.2,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50021",
+    "seed": 50021,
+    "fitness_level": "intermediate",
+    "goal": "strength",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "cardio_machine",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "flexibility"
+    ],
+    "dispreferred_categories": [
+      "strength"
+    ],
+    "fatigue": 0.88,
+    "stress": 0.32,
+    "recent_completion_rate": 0.78,
+    "target_rpe": 5.7,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50022",
+    "seed": 50022,
+    "fitness_level": "intermediate",
+    "goal": "weight_loss",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "kettlebell",
+      "resistance_bands"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [
+      "hiit"
+    ],
+    "fatigue": 0.15,
+    "stress": 0.5,
+    "recent_completion_rate": 0.9,
+    "target_rpe": 6.2,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50023",
+    "seed": 50023,
+    "fitness_level": "intermediate",
+    "goal": "strength",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight"
+    ],
+    "preferred_categories": [
+      "strength"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.53,
+    "stress": 0.19,
+    "recent_completion_rate": 0.62,
+    "target_rpe": 6.9,
+    "restrictions": [],
+    "step": 0
+  },
+  {
+    "user_id": "syn_user_50024",
+    "seed": 50024,
+    "fitness_level": "advanced",
+    "goal": "general_fitness",
+    "available_time_min": 30,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "hiit"
+    ],
+    "dispreferred_categories": [
+      "flexibility"
+    ],
+    "fatigue": 0.74,
+    "stress": 0.67,
+    "recent_completion_rate": 0.81,
+    "target_rpe": 8.0,
+    "restrictions": [],
+    "step": 0
+  }
+]

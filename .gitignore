@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Matplotlib & IDE caches
+.mpl_cache/
+.vscode/
+.idea/
+
+# Large Raw Datasets (~30 GB combined)
+# Raw archives and sensor dumps are excluded; README documentation is tracked.
+Data/*/*
+!Data/*/README.md
+
+# OS Files
+.DS_Store
+Thumbs.db

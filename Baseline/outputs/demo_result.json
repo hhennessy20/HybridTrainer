@@ -1,0 +1,557 @@
+{
+  "metadata": {
+    "seed": 42,
+    "timestamp": "2026-11-05T01:08:35Z",
+    "ollama_status": "ONLINE (qwen3.5:0.8b)"
+  },
+  "user_state": {
+    "user_id": "syn_user_42",
+    "seed": 42,
+    "fitness_level": "beginner",
+    "goal": "general_fitness",
+    "available_time_min": 45,
+    "available_equipment": [
+      "bodyweight",
+      "dumbbells"
+    ],
+    "preferred_categories": [
+      "endurance"
+    ],
+    "dispreferred_categories": [],
+    "fatigue": 0.18,
+    "stress": 0.35,
+    "recent_completion_rate": 0.82,
+    "target_rpe": 4.1,
+    "restrictions": [
+      "low_impact_preferred"
+    ],
+    "step": 0
+  },
+  "baseline_results": [
+    {
+      "policy": "StaticSchedule",
+      "raw_action": {
+        "workout_type": "strength",
+        "target_intensity": 8.0,
+        "estimated_duration_min": 50,
+        "volume": "high",
+        "exercises": [
+          {
+            "name": "Barbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "barbell",
+            "sets": 4,
+            "reps": 8
+          },
+          {
+            "name": "Pull-ups",
+            "category": "strength_upper",
+            "equipment": "pullup_bar",
+            "sets": 3,
+            "reps": 8
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10
+          }
+        ],
+        "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+      },
+      "normalized_action": {
+        "workout_type": "strength",
+        "target_intensity": 8.0,
+        "estimated_duration_min": 50,
+        "volume": "high",
+        "exercises": [
+          {
+            "name": "Barbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "barbell",
+            "sets": 4,
+            "reps": 8,
+            "duration_min": null
+          },
+          {
+            "name": "Pull-ups",
+            "category": "strength_upper",
+            "equipment": "pullup_bar",
+            "sets": 3,
+            "reps": 8,
+            "duration_min": null
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+      },
+      "validation": {
+        "is_valid": false,
+        "violations": [
+          "Exercise 'Barbell Bench Press' requires 'barbell' not in user available equipment: ['bodyweight', 'dumbbells', 'none'].",
+          "Exercise 'Pull-ups' requires 'pullup_bar' not in user available equipment: ['bodyweight', 'dumbbells', 'none']."
+        ],
+        "normalized_action": {
+          "workout_type": "strength",
+          "target_intensity": 8.0,
+          "estimated_duration_min": 50,
+          "volume": "high",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "barbell",
+              "sets": 4,
+              "reps": 8,
+              "duration_min": null
+            },
+            {
+              "name": "Pull-ups",
+              "category": "strength_upper",
+              "equipment": "pullup_bar",
+              "sets": 3,
+              "reps": 8,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+        },
+        "raw_action": {
+          "workout_type": "strength",
+          "target_intensity": 8.0,
+          "estimated_duration_min": 50,
+          "volume": "high",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "barbell",
+              "sets": 4,
+              "reps": 8
+            },
+            {
+              "name": "Pull-ups",
+              "category": "strength_upper",
+              "equipment": "pullup_bar",
+              "sets": 3,
+              "reps": 8
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10
+            }
+          ],
+          "rationale": "Static Day 1: Prescribed heavy upper body barbell and dumbbell session."
+        }
+      },
+      "feedback": {
+        "completion": 0.5,
+        "satisfaction": 0.2,
+        "actual_rpe": 8.95,
+        "target_rpe": 4.1,
+        "rpe_error": 4.85,
+        "fatigue_penalty": 0.0,
+        "reward": -0.869,
+        "violations_count": 2,
+        "is_valid": false
+      },
+      "latency_ms": 0.01
+    },
+    {
+      "policy": "RuleBased",
+      "raw_action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Brisk Walking",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "duration_min": 22
+          },
+          {
+            "name": "Outdoor Running",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "duration_min": 22
+          }
+        ],
+        "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+      },
+      "normalized_action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Brisk Walking",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 22
+          },
+          {
+            "name": "Outdoor Running",
+            "category": "endurance",
+            "equipment": "bodyweight",
+            "sets": null,
+            "reps": null,
+            "duration_min": 22
+          }
+        ],
+        "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 22
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "sets": null,
+              "reps": null,
+              "duration_min": 22
+            }
+          ],
+          "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Brisk Walking",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 22
+            },
+            {
+              "name": "Outdoor Running",
+              "category": "endurance",
+              "equipment": "bodyweight",
+              "duration_min": 22
+            }
+          ],
+          "rationale": "Rule: Aligned with goal 'general_fitness', target RPE 4.1, and available equipment ['bodyweight', 'dumbbells'] within 45 min."
+        }
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9291,
+        "actual_rpe": 5.04,
+        "target_rpe": 4.1,
+        "rpe_error": 0.94,
+        "fatigue_penalty": 0.0,
+        "reward": 1.2756,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "latency_ms": 0.02
+    },
+    {
+      "policy": "TabularRL",
+      "raw_action": {
+        "workout_type": "strength",
+        "target_intensity": 6.0,
+        "estimated_duration_min": 36,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Push-ups",
+            "category": "strength_upper",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 12
+          },
+          {
+            "name": "Dumbbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10
+          }
+        ],
+        "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+      },
+      "normalized_action": {
+        "workout_type": "strength",
+        "target_intensity": 6.0,
+        "estimated_duration_min": 36,
+        "volume": "moderate",
+        "exercises": [
+          {
+            "name": "Push-ups",
+            "category": "strength_upper",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 12,
+            "duration_min": null
+          },
+          {
+            "name": "Dumbbell Bench Press",
+            "category": "strength_upper",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": null
+          }
+        ],
+        "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "strength",
+          "target_intensity": 6.0,
+          "estimated_duration_min": 36,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Push-ups",
+              "category": "strength_upper",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 12,
+              "duration_min": null
+            },
+            {
+              "name": "Dumbbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": null
+            }
+          ],
+          "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+        },
+        "raw_action": {
+          "workout_type": "strength",
+          "target_intensity": 6.0,
+          "estimated_duration_min": 36,
+          "volume": "moderate",
+          "exercises": [
+            {
+              "name": "Push-ups",
+              "category": "strength_upper",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 12
+            },
+            {
+              "name": "Dumbbell Bench Press",
+              "category": "strength_upper",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 10
+            }
+          ],
+          "rationale": "Q-learning policy action #5 (Moderate Strength): intensity 6.0, duration 36 min, volume moderate."
+        }
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.4866,
+        "actual_rpe": 6.94,
+        "target_rpe": 4.1,
+        "rpe_error": 2.84,
+        "fatigue_penalty": 0.0,
+        "reward": 0.6743,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "latency_ms": 0.03
+    },
+    {
+      "policy": "LLM_Ollama",
+      "raw_action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "low",
+        "exercises": [
+          {
+            "name": "Bodyweight Air Squats",
+            "category": "strength",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": 20
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "strength",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 15,
+            "duration_min": 45
+          },
+          {
+            "name": "Push-ups (Bodyweight)",
+            "category": "strength",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": 20
+          }
+        ],
+        "rationale": "Focus on high-intensity intervals to maximize RPE while maintaining low volume for a beginner."
+      },
+      "normalized_action": {
+        "workout_type": "endurance",
+        "target_intensity": 4.1,
+        "estimated_duration_min": 45,
+        "volume": "low",
+        "exercises": [
+          {
+            "name": "Bodyweight Air Squats",
+            "category": "strength",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": 20
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "category": "strength",
+            "equipment": "dumbbells",
+            "sets": 3,
+            "reps": 15,
+            "duration_min": 45
+          },
+          {
+            "name": "Push-ups (Bodyweight)",
+            "category": "strength",
+            "equipment": "bodyweight",
+            "sets": 3,
+            "reps": 10,
+            "duration_min": 20
+          }
+        ],
+        "rationale": "Focus on high-intensity intervals to maximize RPE while maintaining low volume for a beginner."
+      },
+      "validation": {
+        "is_valid": true,
+        "violations": [],
+        "normalized_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Bodyweight Air Squats",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": 20
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 15,
+              "duration_min": 45
+            },
+            {
+              "name": "Push-ups (Bodyweight)",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": 20
+            }
+          ],
+          "rationale": "Focus on high-intensity intervals to maximize RPE while maintaining low volume for a beginner."
+        },
+        "raw_action": {
+          "workout_type": "endurance",
+          "target_intensity": 4.1,
+          "estimated_duration_min": 45,
+          "volume": "low",
+          "exercises": [
+            {
+              "name": "Bodyweight Air Squats",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": 20
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "category": "strength",
+              "equipment": "dumbbells",
+              "sets": 3,
+              "reps": 15,
+              "duration_min": 45
+            },
+            {
+              "name": "Push-ups (Bodyweight)",
+              "category": "strength",
+              "equipment": "bodyweight",
+              "sets": 3,
+              "reps": 10,
+              "duration_min": 20
+            }
+          ],
+          "rationale": "Focus on high-intensity intervals to maximize RPE while maintaining low volume for a beginner."
+        }
+      },
+      "feedback": {
+        "completion": 1.0,
+        "satisfaction": 0.9291,
+        "actual_rpe": 5.04,
+        "target_rpe": 4.1,
+        "rpe_error": 0.94,
+        "fatigue_penalty": 0.0,
+        "reward": 1.2756,
+        "violations_count": 0,
+        "is_valid": true
+      },
+      "latency_ms": 7902.17
+    }
+  ]
+}
