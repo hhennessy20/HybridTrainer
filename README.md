@@ -283,7 +283,9 @@ The core breakthrough of HybridTrainer lies in the decoupling of **macro-level p
 The verified macro-action $a_t^* = (m_t, I_t^{\text{base}}, T_t^{\text{max}})$ and continuous biometric state $\mathbf{s}_t$ are formatted into a compact grounded prompt passed to the local on-device LLM (`qwen3.5:0.8b` via Ollama):
 
 1. **Continuous Intensity Micro-Calibration:**
-   The LLM inverts the physiological target equation to calculate an exact continuous intensity adjustment within the safe envelope $[I_{\min}(m_t), I_{\max}(m_t)]$:$I_{\mathrm{target}} = \text{clip}\left(RPE^*_t - 1.5 \cdot \text{fatigue}_t - 0.5 \cdot \text{stress}_t,\; I_{\min}(m_t),\; I_{\max}(m_t)\right)$
+   The LLM inverts the physiological target equation to calculate an exact continuous intensity adjustment within the safe envelope $[I_{\min}(m_t), I_{\max}(m_t)]$:
+   
+   $I_{\mathrm{target}} = \max\left(I_{\min}(m_t), \min\left(I_{\max}(m_t), RPE^*_t - 1.5 \cdot \mathrm{fatigue}_t - 0.5 \cdot \mathrm{stress}_t\right)\right)$
 
    For example, if a user with target Borg RPE $4.3$ experiences elevated fatigue ($0.18$) and stress ($0.35$), the LLM micro-calibrates base endurance intensity from $4.5 \to 3.86$. This micro-tuning collapses residual Borg CR10 error from $1.20 \to \mathbf{0.04}$, driving composite reward to $\mathbf{+1.455}$.
 
