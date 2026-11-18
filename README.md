@@ -241,47 +241,77 @@ Nine discrete macro-actions balancing modality, intensity, and duration:
 * $a_8$: General Conditioning Circuit (intensity 5.5, 40 min)
 
 ### Dueling Double DQN Objective
+
 The Q-network decouples state value $V(\mathbf{s})$ from action advantages $A(\mathbf{s}, a)$ to stabilize learning in low-variance states:
-$$Q(\mathbf{s}, a; \theta) = V(\mathbf{s}; \theta_V) + \left( A(\mathbf{s}, a; \theta_A) - \frac{1}{|\mathcal{A}|} \sum_{a'} A(\mathbf{s}, a'; \theta_A) \right)$$
+
+$$
+Q(\mathbf{s}, a; \theta) = V(\mathbf{s}; \theta_V) + \left( A(\mathbf{s}, a; \theta_A) - \frac{1}{|\mathcal{A}|} \sum_{a'} A(\mathbf{s}, a'; \theta_A) \right)
+$$
+
 Parameters are optimized via Double Q-learning under Smooth L1 (Huber) loss:
-$$\mathcal{L}(\theta) = \mathbb{E}_{(\mathbf{s}, a, r, \mathbf{s}')} \left[ \ell_{\delta} \left( r + \gamma (1-d) Q(\mathbf{s}', \arg\max_{a'} Q(\mathbf{s}', a'; \theta); \theta^-) - Q(\mathbf{s}, a; \theta) \right) \right]$$
+
+$$
+\mathcal{L}(\theta) = \mathbb{E}_{(\mathbf{s}, a, r, \mathbf{s}')} \left[ \ell_{\delta} \left( r + \gamma (1-d) Q(\mathbf{s}', \arg\max_{a'} Q(\mathbf{s}', a'; \theta); \theta^-) - Q(\mathbf{s}, a; \theta) \right) \right]
+$$
+
 with Polyak soft target network synchronization ($\theta^- \leftarrow \tau \theta + (1-\tau)\theta^-$ where $\tau=0.005$).
 
 ### Dynamic Action Masking ($\mathcal{M}(\mathbf{s}_t)$)
+
 To guarantee physiological safety and prevent schedule abandonment before any generative synthesis occurs, an analytic action mask $\mathcal{M}(\mathbf{s}_t) \in \{0, -\infty\}^{|\mathcal{A}|}$ is dynamically evaluated against the continuous state:
-$$\mathcal{M}(\mathbf{s}_t, a) = \begin{cases} -\infty & \text{if } \text{fatigue}_t \ge 0.80 \text{ and } \text{intensity}(a) > 4.0 \\ -\infty & \text{if } \text{duration}(a) > T_{\text{available}} \\ 0 & \text{otherwise} \end{cases}$$
+
+$$
+\mathcal{M}(\mathbf{s}_t, a) = \begin{cases} -\infty & \text{if } \text{fatigue}_t \ge 0.80 \text{ and } \text{intensity}(a) > 4.0 \\ -\infty & \text{if } \text{duration}(a) > T_{\mathrm{available}} \\ 0 & \text{otherwise} \end{cases}
+$$
+
 The greedy macro-action is selected by applying the mask directly to the Q-values:
-$$a_t^* = \arg\max_{a \in \mathcal{A}} \left[ Q(\mathbf{s}_t, a; \theta) + \mathcal{M}(\mathbf{s}_t, a) \right]$$
+
+$$
+a_t^* = \arg\max_{a \in \mathcal{A}} \left[ Q(\mathbf{s}_t, a; \theta) + \mathcal{M}(\mathbf{s}_t, a) \right]
+$$
+
 This guarantees $0.0\%$ constraint violations and $0.0\%$ duration overruns in just $0.26$ milliseconds, completely eliminating the safety risks of hallucinated overtraining common in unconstrained language models.
 
 ### Two-Stage Hybrid RL $\to$ LLM Interaction & Synthesis
+
 The core breakthrough of HybridTrainer lies in the decoupling of **macro-level physiological alignment** and **micro-level generative synthesis**. Neither component can achieve high performance independently:
-* **The Failure of Pure RL:** A discrete RL agent is constrained to coarse action envelopes (e.g., fixed intensity tiers $4.5, 6.0, 7.5$). Human perceived exertion, however, fluctuates continuously based on daily bio-markers ($RPE_{\text{perceived}} \approx \text{intensity} + 1.5 \cdot \text{fatigue} + 0.5 \cdot \text{stress}$). A rigid discrete action leaves massive residual exertion error ($|RPE - RPE^*| \approx 1.20$), depressing user satisfaction to $0.74$. Furthermore, RL cannot synthesize natural language cues or select personalized exercises dynamically.
+* **The Failure of Pure RL:** A discrete RL agent is constrained to coarse action envelopes (e.g., fixed intensity tiers $4.5, 6.0, 7.5$). Human perceived exertion, however, fluctuates continuously based on daily bio-markers ($RPE_{\mathrm{perceived}} \approx \text{intensity} + 1.5 \cdot \text{fatigue} + 0.5 \cdot \text{stress}$). A rigid discrete action leaves massive residual exertion error ($|RPE - RPE^*| \approx 1.20$), depressing user satisfaction to $0.74$. Furthermore, RL cannot synthesize natural language cues or select personalized exercises dynamically.
 * **The Failure of Pure LLMs:** Zero-shot language models lack sequential biometric memory, can hallucinate equipment that users do not own (causing violations), and can ignore hard duration limits.
 
 #### How the Interaction Functions
+
 The verified macro-action $a_t^* = (m_t, I_t^{\text{base}}, T_t^{\text{max}})$ and continuous biometric state $\mathbf{s}_t$ are formatted into a compact grounded prompt passed to the local on-device LLM (`qwen3.5:0.8b` via Ollama):
 
 1. **Continuous Intensity Micro-Calibration:**
    The LLM inverts the physiological target equation to calculate an exact continuous intensity adjustment within the safe envelope $[I_{\min}(m_t), I_{\max}(m_t)]$:
-   $$I_{\text{target}} = \text{clip}\left( RPE^*_t - 1.5 \cdot \text{fatigue}_t - 0.5 \cdot \text{stress}_t, \; I_{\min}(m_t), \; I_{\max}(m_t) \right)$$
+
+   $$
+   I_{\mathrm{target}} = \text{clip}\left( RPE^*_t - 1.5 \cdot \text{fatigue}_t - 0.5 \cdot \text{stress}_t, \; I_{\min}(m_t), \; I_{\max}(m_t) \right)
+   $$
+
    For example, if a user with target Borg RPE $4.3$ experiences elevated fatigue ($0.18$) and stress ($0.35$), the LLM micro-calibrates base endurance intensity from $4.5 \to 3.86$. This micro-tuning collapses residual Borg CR10 error from $1.20 \to \mathbf{0.04}$, driving composite reward to $\mathbf{+1.455}$.
 
 2. **Equipment-Grounded Exercise Catalogue Selection:**
-   Rather than unconstrained generation, the LLM filters candidate exercises from the verified 20-exercise database using the user's available equipment mask $\mathcal{E}_{\text{avail}} \in \{0, 1\}^8$. It assigns structured exercise sets, reps, and durations that sum strictly within the prescribed duration ceiling $T_t^{\text{max}}$.
+   Rather than unconstrained generation, the LLM filters candidate exercises from the verified 20-exercise database using the user's available equipment mask $\mathcal{E}_{\mathrm{avail}} \in \{0, 1\}^8$. It assigns structured exercise sets, reps, and durations that sum strictly within the prescribed duration ceiling $T_t^{\text{max}}$.
 
 3. **Empathetic Contextual Coaching Cues:**
    The LLM generates a 1-sentence motivational coaching rationale explaining *why* the routine was adapted (e.g., *"Lowered bench press intensity to RPE 5.5 to accommodate high work stress while maintaining weekly chest volume"*), providing the user with transparency and fostering long-term adherence.
 
 ### Multi-Objective Physiological Feedback Loop ($R_t$)
+
 The feedback loop simulates realistic physiological and behavioral user responses through a composite multi-objective scalar reward:
-$$R_t = w_c \cdot C_t + w_s \cdot S_t - w_e \cdot |RPE_t - RPE^*_t| - w_f \cdot F_t - 0.25 \cdot V_t$$
+
+$$
+R_t = w_c \cdot C_t + w_s \cdot S_t - w_e \cdot |RPE_t - RPE^*_t| - w_f \cdot F_t - 0.25 \cdot V_t
+$$
+
 where:
-* **Completion Rate ($C_t \in [0, 1]$):** Evaluates workout execution fidelity. Penalized by duration overruns ($\min(1.0, T_{\text{available}} / T_{\text{prescribed}})$) and missing equipment ($-0.20$ per unavailable item).
-* **User Satisfaction ($S_t \in [0, 1]$):** Driven by completion, category preference match bonus ($+0.30$), Borg RPE alignment bonus ($+0.30$), and recovery reward ($+0.40$) when rest is prescribed during severe fatigue.
-* **Borg CR10 Exertion Error ($|RPE_t - RPE^*_t|$):** The discrepancy between perceived physical exertion ($RPE_t = I_t + 1.5 \cdot \text{fatigue}_t + 0.5 \cdot \text{stress}_t$) and the user's target Borg RPE.
-* **Fatigue Overload Penalty ($F_t \in [0, 1]$):** Incurs quadratic strain penalties when high intensity ($I_t > 6.5$) is prescribed to an already fatigued ($\ge 0.50$) or stressed ($\ge 0.50$) user.
-* **Constraint Violations ($V_t$):** Hard penalty ($0.25$ per infraction) for recommending unowned equipment or violating medical restrictions.
+
+* **Completion Rate** ($C_t \in [0, 1]$): Evaluates workout execution fidelity. Penalized by duration overruns ($\min(1.0, \, T_{\mathrm{avail}} / T_{\mathrm{target}})$) and missing equipment ($-0.20$ per unavailable item).
+* **User Satisfaction** ($S_t \in [0, 1]$): Driven by completion, category preference match bonus ($+0.30$), Borg RPE alignment bonus ($+0.30$), and recovery reward ($+0.40$) when rest is prescribed during severe fatigue.
+* **Borg CR10 Exertion Error** ($|RPE_t - RPE^*_t|$): The discrepancy between perceived physical exertion ($RPE_t = I_t + 1.5 \cdot \text{fatigue}_t + 0.5 \cdot \text{stress}_t$) and the user's target Borg RPE.
+* **Fatigue Overload Penalty** ($F_t \in [0, 1]$): Incurs quadratic strain penalties when high intensity ($I_t > 6.5$) is prescribed to an already fatigued ($\ge 0.50$) or stressed ($\ge 0.50$) user.
+* **Constraint Violations** ($V_t$): Hard penalty ($0.25$ per infraction) for recommending unowned equipment or violating medical restrictions.
 
 ---
 
